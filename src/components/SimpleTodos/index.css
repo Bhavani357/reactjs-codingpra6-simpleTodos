@@ -1,0 +1,33 @@
+/* Write your CSS here */
+.bg-container {
+  background-color: #ffc2a0;
+  padding: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card-container {
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto';
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+}
+.heading {
+  color: #ff8542;
+  font-size: 32px;
+}
+.ul-container {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: 1;
+}

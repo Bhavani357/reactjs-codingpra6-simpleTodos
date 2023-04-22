@@ -1,0 +1,21 @@
+/* Write your CSS here */
+.li-container {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+.para {
+  color: #000000;
+  font-family: 'Roboto';
+  font-size: 18px;
+}
+.button {
+  cursor: pointer;
+  outline: none;
+  padding: 3px;
+  color: #ff0b37;
+  border-radius: 6px;
+  border: 1px solid #ff0b37;
+  height: 30px;
+  width: 80px;
+}
