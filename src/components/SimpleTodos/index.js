@@ -1,5 +1,7 @@
 import {Component} from 'react'
-import TodoElement from '../TodoItem'
+
+import TodoItem from '../TodoItem'
+
 import './index.css'
 
 const initialTodosList = [
@@ -38,31 +40,36 @@ const initialTodosList = [
 ]
 
 class SimpleTodos extends Component {
-  state = {todoList: initialTodosList}
+  state = {
+    todosList: initialTodosList,
+  }
 
-  deleteTodoItem = id => {
-    const {todoList} = this.state
+  deleteTodo = id => {
+    const {todosList} = this.state
+    const updatedTodosList = todosList.filter(eachTodo => eachTodo.id !== id)
 
-    const filteredTodoData = todoList.filter(each => each.id !== id)
-
-    this.setState({todoList: filteredTodoData})
+    this.setState({
+      todosList: updatedTodosList,
+    })
   }
 
   render() {
+    const {todosList} = this.state
+
     return (
-      <div className="bg-container">
-        <di className="card-container">
+      <div className="app-container">
+        <div className="simple-todos-container">
           <h1 className="heading">Simple Todos</h1>
-          <ul className="ul-container">
-            {initialTodosList.map(eachObj => (
-              <TodoElement
-                todoDetails={eachObj}
-                key={eachObj.id}
-                deleteTodoItem={this.deleteTodoItem}
+          <ul className="todos-list">
+            {todosList.map(eachTodo => (
+              <TodoItem
+                key={eachTodo.id}
+                todoDetails={eachTodo}
+                deleteTodo={this.deleteTodo}
               />
             ))}
           </ul>
-        </di>
+        </div>
       </div>
     )
   }
